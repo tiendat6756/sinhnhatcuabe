@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chúc mừng sinh nhật em 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#fff8f3;--bg2:#ffe9ee;--ink:#5c3d46;--soft:#9b7681;--pink:#ff8fab;--pink2:#ffc8d6;--cream:#fff1dc;--card:rgba(255,255,255,.78);--line:#ffc2d1;--plate:#f3d9de;
+--script:"Dancing Script","Segoe Script","Brush Script MT",cursive;--sans:"Quicksand","Segoe UI",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b1c22;--bg2:#3a2229;--ink:#ffe9ee;--soft:#d9aab6;--card:rgba(70,40,50,.72);--line:#7a4656;--plate:#4a2d36;--cream:#ffe3c2}}
+:root[data-theme="dark"]{--bg:#2b1c22;--bg2:#3a2229;--ink:#ffe9ee;--soft:#d9aab6;--card:rgba(70,40,50,.72);--line:#7a4656;--plate:#4a2d36;--cream:#ffe3c2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);line-height:1.8;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%) fixed;overflow-x:hidden}
+section{max-width:640px;margin:0 auto;padding:72px 22px;text-align:center}
+h1,h2{font-family:var(--script);font-weight:700;margin:0;line-height:1.15}
+h1{font-size:clamp(2.6rem,11vw,4.4rem);color:var(--pink)}
+h2{font-size:clamp(2rem,8vw,2.8rem);color:var(--pink);margin-bottom:22px}
+.sub{color:var(--soft);margin:8px 0 0}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#hearts i{position:absolute;bottom:-40px;color:var(--pink2);font-style:normal;animation:up linear infinite;opacity:.8}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1}
+#cake{width:min(280px,72vw);cursor:pointer;margin:22px auto 0;display:block;overflow:visible;-webkit-tap-highlight-color:transparent}
+#cake:focus-visible{outline:3px solid var(--pink);outline-offset:6px;border-radius:12px}
+.flame{transform-origin:100px 46px;animation:fl .5s ease-in-out infinite alternate;transition:opacity .25s,transform .25s}
+@keyframes fl{from{transform:scale(1,1) rotate(-3deg)}to{transform:scale(.92,1.1) rotate(3deg)}}
+.smoke{opacity:0}
+#cake.out .flame{opacity:0;transform:scale(.2)}
+#cake.out .smoke{animation:sm 1.8s ease-out forwards}
+@keyframes sm{0%{opacity:.7;transform:translateY(0)}100%{opacity:0;transform:translateY(-34px)}}
+.hint{margin-top:14px;font-weight:600;color:var(--soft);animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}
+#wish{max-height:0;opacity:0;overflow:hidden;transition:max-height .8s,opacity .8s;font-family:var(--script);font-size:1.7rem;color:var(--pink)}
+#wish.on{max-height:140px;opacity:1;margin-top:10px}
+.tl{list-style:none;margin:0;padding:0 0 0 30px;text-align:left;position:relative}
+.tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 28px 14px}
+.tl li::before{content:"♥";position:absolute;left:-30px;top:0;width:18px;text-align:center;color:var(--pink);font-size:1rem;background:var(--bg);border-radius:50%}
+.tl b{display:block;font-size:1.1rem}
+.tl span{color:var(--soft)}
+.letter{background:var(--card);border:1.5px solid var(--line);border-radius:28px;padding:34px 26px;text-align:left;backdrop-filter:blur(6px);box-shadow:0 12px 40px rgba(255,143,171,.18)}
+.letter p{margin:0 0 16px}
+.sign{font-family:var(--script);font-size:1.9rem;color:var(--pink);text-align:right;margin:8px 0 0!important}
+button.gift{font:600 1.05rem var(--sans);color:#fff;background:var(--pink);border:0;border-radius:999px;padding:14px 30px;cursor:pointer;box-shadow:0 8px 22px rgba(255,143,171,.45);transition:transform .15s}
+button.gift:hover{transform:scale(1.05)}
+button.gift:active{transform:scale(.96)}
+button.gift:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+#gift-msg{margin-top:26px;font-size:1.15rem;display:none}
+#gift-msg.on{display:block;animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+footer{padding:10px 22px 60px;text-align:center;color:var(--soft);position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#hearts{display:none}}
+</style>
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+  <section id="top">
+    <h1>Chúc mừng sinh nhật em yêu</h1>
+    <p class="sub">30 tháng 10 · ngày của riêng em</p>
+    <svg id="cake" viewBox="0 0 200 190" role="button" tabindex="0" aria-label="Chạm để thổi nến">
+      <ellipse cx="100" cy="174" rx="88" ry="10" fill="var(--plate)"/>
+      <rect x="30" y="112" width="140" height="60" rx="16" fill="#ffc8d6"/>
+      <rect x="30" y="110" width="140" height="14" rx="7" fill="#fff"/>
+      <g fill="#fff"><circle cx="46" cy="126" r="8"/><circle cx="76" cy="128" r="9"/><circle cx="106" cy="127" r="8"/><circle cx="136" cy="128" r="9"/><circle cx="158" cy="126" r="7"/></g>
+      <g fill="#ff8fab" font-size="14" text-anchor="middle"><text x="62" y="156">♥</text><text x="100" y="160">♥</text><text x="138" y="156">♥</text></g>
+      <rect x="48" y="74" width="104" height="44" rx="13" fill="var(--cream)"/>
+      <rect x="48" y="72" width="104" height="13" rx="6" fill="#fff"/>
+      <g fill="#fff"><circle cx="62" cy="86" r="7"/><circle cx="84" cy="88" r="8"/><circle cx="108" cy="87" r="7"/><circle cx="132" cy="88" r="8"/></g>
+      <rect x="96" y="46" width="8" height="28" rx="3" fill="#ff8fab"/>
+      <path class="smoke" d="M100 40 q-6 -8 0 -16 q6 -8 0 -16" fill="none" stroke="var(--soft)" stroke-width="2" stroke-linecap="round"/>
+      <g class="flame"><path d="M100 22 q-11 14 0 24 q11 -10 0 -24z" fill="#ffb703"/><path d="M100 31 q-5 7 0 13 q5 -6 0 -13z" fill="#fff3b0"/></g>
+    </svg>
+    <p class="hint" id="hint">Chạm vào bánh để thổi nến nhé 🕯️</p>
+    <p id="wish">Em ước điều gì cũng thành sự thật nha 🤍</p>
+  </section>
+
+  <section>
+    <h2 class="rv">Hành trình của mình</h2>
+    <ul class="tl">
+      <li class="rv"><b>5 năm trước</b><span>Mình đã lỡ mất nhau.</span></li>
+      <li class="rv"><b>Rồi một ngày</b><span>Cuộc đời đưa em trở lại, đúng lúc anh biết trân trọng hơn.</span></li>
+      <li class="rv"><b>Gần 6 tháng bên nhau</b><span>Mỗi ngày bên em đều nhẹ nhàng và ấm áp.</span></li>
+      <li class="rv"><b>30/10</b><span>Sinh nhật đầu tiên anh được đón cùng em.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="rv">Gửi em</h2>
+    <div class="letter rv">
+      <p>Hôm nay là sinh nhật em, và anh thấy mình thật may mắn khi được ở ngay đây, cạnh em, để nói lời chúc mừng này.</p>
+      <p>Năm năm trước, chúng ta đã bỏ lỡ nhau. Anh từng nghĩ có những người chỉ đi qua đời mình một lần thôi. Vậy mà em lại quay về, để anh có cơ hội yêu em đúng cách và trân trọng em nhiều hơn.</p>
+      <p>Gần 6 tháng bên em, anh nhận ra hạnh phúc đôi khi chỉ là những điều rất nhỏ: một tin nhắn buổi sáng, một cái nắm tay, tiếng cười của em làm dịu cả một ngày dài.</p>
+      <p>Cảm ơn em đã đến, đã ở lại và đã yêu anh theo cách riêng của em. Được đón sinh nhật cùng em là điều anh vui nhất lúc này.</p>
+      <p>Chúc em tuổi mới thật nhiều niềm vui, luôn xinh đẹp, bình yên và được yêu thương thật nhiều. Và nếu em cho phép, hãy để anh ở cạnh em trong tất cả những sinh nhật sau nữa nhé.</p>
+      <p class="sign">Yêu em nhiều, anh ♥</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="rv">Còn một món quà nhỏ</h2>
+    <button class="gift rv" id="gift">Mở quà của anh 🎁</button>
+    <p id="gift-msg">Một cái ôm thật chặt, một lời hứa luôn ở bên em,<br>và rất nhiều yêu thương, ngay hôm nay và cả sau này. 🤍</p>
+  </section>
+</main>
+<footer>Làm bằng cả trái tim, dành riêng cho em ♥</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // floating hearts
+  var hb=document.getElementById("hearts"),sym=["♥","♡","✿","✦"];
+  if(!reduce){for(var i=0;i<16;i++){var h=document.createElement("i");h.textContent=sym[i%4];
+    h.style.left=Math.random()*100+"%";h.style.fontSize=(12+Math.random()*20)+"px";
+    h.style.animationDuration=(9+Math.random()*10)+"s";h.style.animationDelay=(-Math.random()*14)+"s";hb.appendChild(h);}}
+  // scroll reveal
+  var rv=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.2});
+    rv.forEach(function(el,i){el.style.transitionDelay=((i%4)*90)+"ms";io.observe(el);});
+  }else{rv.forEach(function(el){el.classList.add("in");});}
+  // confetti
+  var cv=document.getElementById("fx"),cx=cv.getContext("2d"),ps=[],run=false;
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}size();addEventListener("resize",size);
+  var cols=["#ff8fab","#ffc8d6","#fff1dc","#ffb703","#ffffff"];
+  function burst(x,y){
+    if(reduce)return;
+    for(var i=0;i<110;i++){var a=Math.random()*Math.PI*2,s=4+Math.random()*9;
+      ps.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:4+Math.random()*6,c:cols[i%5],h:i%3===0,rot:Math.random()*6,life:1});}
+    if(!run){run=true;requestAnimationFrame(tick);}
+  }
+  function tick(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    ps=ps.filter(function(p){return p.life>0&&p.y<cv.height+30;});
+    ps.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.22;p.vx*=.985;p.life-=.008;p.rot+=.1;
+      cx.globalAlpha=Math.max(p.life,0);cx.fillStyle=p.c;
+      if(p.h){cx.font=(p.r*3)+"px sans-serif";cx.fillText("♥",p.x,p.y);}
+      else{cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillRect(-p.r/2,-p.r/2,p.r,p.r*1.6);cx.restore();}});
+    cx.globalAlpha=1;
+    if(ps.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height);}
+  }
+  // cake
+  var cake=document.getElementById("cake"),wish=document.getElementById("wish"),hint=document.getElementById("hint");
+  function blow(){
+    if(cake.classList.contains("out"))return;
+    cake.classList.add("out");wish.classList.add("on");hint.textContent="Chúc mừng sinh nhật em! 🎉";
+    var r=cake.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.3);
+    setTimeout(function(){burst(innerWidth*.2,innerHeight*.35);burst(innerWidth*.8,innerHeight*.35);},350);
+  }
+  cake.addEventListener("click",blow);
+  cake.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();blow();}});
+  // gift
+  var g=document.getElementById("gift"),gm=document.getElementById("gift-msg");
+  g.addEventListener("click",function(){
+    gm.classList.add("on");g.textContent="Anh yêu em 💗";
+    var r=g.getBoundingClientRect();burst(r.left+r.width/2,r.top);
+  });
+})();
+</script>
+</body>
+</html>
